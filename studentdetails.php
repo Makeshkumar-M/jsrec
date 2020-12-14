@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root";
+$username = "jsrecdb";
 $password = "";
-$dbname = "collegedb";
+$dbname = "jsrecdb";
 
 $conn = mysqli_connect($servername,$username,$password,$dbname);
 

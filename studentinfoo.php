@@ -49,11 +49,11 @@
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
+          <li ><a href="index.html">Home</a></li>
           <li><a href="services.html">Attendence</a></li>
           <li><a href="facultyinformation.html">Faculty details</a></li>
 
-          <li><a href="studentinfoo.php">Student details</a></li>
+          <li class="active"><a href="studentinfoo.php">Student details</a></li>
           <li><a href="team.html">Timetable</a></li>
           <li><a href="blog.html">Result</a></li>
 
