@@ -1,10 +1,10 @@
 <?php
 $servername = "localhost";
-$username = "root";
+$username = "jsrecdb";
 $password = "";
-$dbname = "collegedb";
+$dbname = "jsrecdb";
 
-$conn = mysqli_connect($servername,$username,$password,$dbname);
+$conn =mysqli_connect($servername,$username,$password,$dbname);
 
 if(!$conn){
 	die("connection failed: " . mysql_connect_error());
@@ -12,9 +12,9 @@ if(!$conn){
 if (isset($_POST['submit'])) 
 {
 $studentname = $_POST['studentname'];
-#$file = addslashes(file_get_contents($_FILES["profile"]["tmp_name"]));  
+$file = addslashes(file_get_contents($_FILES["profile"]["tmp_name"]));  
 $rollno = $_POST['rollno'];
-$registerno = $_POST['registerno'];
+$registe  = $_POST['registerno'];
 $degree = $_POST['degree'];
 $department = $_POST['department'];
 $email = $_POST['email'];
@@ -36,7 +36,7 @@ $pmobileno = $_POST['pmobileno'];
 $schoolname = $_POST['schoolname'];
 $cuttoff = $_POST['cuttoff'];
 
-$sql = "INSERT INTO studentinfo(id, studentname, rollno , registerno , degree , department , email,enrolledon , dob , bloodgroup , mobileno, address , city , aadharno,community , quota , daysshostler , firstgraduate , medium ,fathername , mothername , pmobileno , schoolname , cuttoff)VALUES( NULL,'$studentname','$rollno','$registerno','$degree','$department','$email','$enrolledon','$dob','$bloodgroup','$mobileno','$address','$city','$aadharno','$community','$quota','$daysshostler','$firstgraduate','$medium','$fathername','$mothername','$pmobileno','$schoolname','$cuttoff')";
+$sql = "INSERT INTO studentinfo(id, studentname, profile, rollno, registerno, degree , department , email,enrolledon , dob , bloodgroup , mobileno, address, city, aadharno, community, quota, daysshostler , firstgraduate, medium, fathername, mothername, pmobileno, schoolname, cuttoff)VALUES( NULL,'$studentname',$file,'$rollno','$registerno','$degree','$department','$email','$enrolledon','$dob','$bloodgroup','$mobileno','$address','$city','$aadharno','$community','$quota','$daysshostler','$firstgraduate','$medium','$fathername','$mothername','$pmobileno','$schoolname','$cuttoff')";
 
 if (mysqli_query($conn,$sql)){
 	echo "student details uploaded successfully";

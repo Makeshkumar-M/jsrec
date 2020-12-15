@@ -8,10 +8,12 @@
   <title>JSREC</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
+
+  
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
+  <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -25,6 +27,25 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <style type="text/css">
+@media (min-width: 1000px)constructed stylesheet
+.container, .container-lg, .container-md, .container-sm {
+    max-width: 100%;
+}
+.container {
+    width: 110%;
+    padding-right: 5px;
+    padding-left: 0px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+.nav-menu > ul > li {
+    position: relative;
+    white-space: nowrap;
+    float: left;
+    left: 182px;
+}
+  </style>
 
   <!-- =======================================================
   * Template Name: Moderna - v2.1.0
@@ -37,12 +58,12 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-transparent" style="background: #03A9F4;">
+  <header id="header" class="fixed-top header-transparent" style="background: #0084fd;">
     <div class="container">
 
       <div class="logo float-left">
-        <h1 class="text-light"><a href="index.html"><span><img src="assets\img/jay-fin.png" style="position: fixed;
-    right: 930px;"></span></a></h1>
+        <h1 class="text-light"><a href="index.html"><span><img src="assets\img/jay-fin.png"style="position: fixed;
+    right: 960px;"></span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -50,14 +71,13 @@
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
           <li ><a href="index.html">Home</a></li>
-          <li><a href="attendencehome.html">Attendence</a></li>
-          <li><a href="facultyinformation.html">Faculty details</a></li>
+          <li class="active"><a href="attendancehome.html">Attendence</a></li>
+          <li><a href="facultyinformation.html">Faculty Details</a></li>
 
-          <li class="active"><a href="studentinfoo.php">Student details</a></li>
+          <li><a href="studentinfoo.php">Student Details</a></li>
+          
           <li><a href="timetablehome.html">Timetable</a></li>
           <li><a href="blog.html">Result</a></li>
-
-
           <li class="drop-down"><a href="">Department</a>
             <ul>
                   <li><a href="#">CSE</a></li>
@@ -76,61 +96,61 @@
 
   <main id="main">
 
-    <!-- ======= Our Portfolio Section ======= -->
+    <!-- ======= Our Services Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2><input type="button" name="type" id="bt1" onclick="setVisibility('view');"  value='UPLOAD' style="
-      background-color: #1ebcea; /* Green */
-      border: none;
-      color: white;
-      border-radius:6px; 
-      padding: 10px;
-      width: 100px;
-      height: 40px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-"><input type="button" name="type" id="bt2" onclick="setVisibility2('upload');"  value='VIEW' style=" background-color:#1ebcea; /* Green */
-  border: none;
-    border-radius:6px; 
-
-  color: white;
-  padding: 10px;
-  width: 100px;
-  height:40px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;"></button></h2>
-
+          <h2>Class Attendence</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>uploade</li>
+            <li>Class Time Table</li>
           </ol>
         </div>
 
       </div>
-    </section><!-- End Our Portfolio Section -->
+    </section><!-- End Our Services Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section class="portfolio">
-      <div class="container" style="padding-right:;
-    padding-left:;
-    margin-right: auto;
-    margin-left:2px;">
-        <embed type="text/html" src="studentinfo.php"  style="width:1200px; height:1413px;">
+    <!-- ======= Services Section ======= -->
+    <section class="services" style=" background-color:white;">
+      
+      <div class="container" id="upload" style="width:100%;">
+
+         <embed type="text/html" src="table2.html" style=" left:20px;width:120%; height:650px;"></embed>
+       
+        </div>
+       
+
+
+      </div>
+      <script type="text/javascript">
+      
+      function togglediv(id) {
+      document.querySelectorAll(".container").forEach(function(div) {
+       if (div.id == id) {
+      // Toggle specified DIV
+       div.style.display = div.style.display == "none" ? "block" : "none";
+       } else {
+      // Hide other DIVs
+      div.style.display = "none";
+       }
+      });
+     }
+
+      </script>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+      <div class="container">
+
         
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section><!-- End Why Us Section -->
 
+
+   
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -138,28 +158,16 @@
 
     <div class="footer-newsletter">
       <div class="container">
-        
-
-
-
-
-
-
-      </div>
-    </div>
-
-    <div class="footer-top">
-      <div class="container">
         <div class="row">
-
           
-
 
 
 
         </div>
       </div>
     </div>
+
+    
 
     <div class="container">
       <div class="copyright">
@@ -170,7 +178,7 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-        Designed by <a href="https://bootstrapmade.com/">AZTEC</a>
+        Designed by <a href="">AZTECS</a>
       </div>
     </div>
   </footer><!-- End Footer -->
