@@ -214,16 +214,16 @@ max-width: 100%;
   <table class="table table-bordered table-sm" style="width:117%;">
     <thead>
           <th colspan="7" style="height:70px; width: 100%; ">
-            <label style="position:relative;left:50px; padding-top:20px;  ">DATE:</label><br>
+            <label style="position:relative;left:50px; padding-top:20px;  ">DATE:<?php ?></label><br>
             <label style="position:relative;left:50px; padding-top: 5px;">YEAR:</label><br>
             <label style="position:relative;left:50px; padding-top: 5px;">DEPARTMENT:</label><br>
             <label style="position:relative;left:59%;bottom:20px">SUBJECT:</label>
           </th>
 
       <tr>
-        <th style=" width:10px;"><h3>s.no</h3></th>
-        <th ><h3>register no</h3></th>
-        <th><h3>student name</h3></th>
+        <th style=" width:10px;"><h3>S.No.</h3></th>
+        <th ><h3>Register No.</h3></th>
+        <th><h3>Student Name</h3></th>
 
 
         <th style=" width:10px;"><h3>P</h3>
@@ -235,33 +235,15 @@ max-width: 100%;
     </thead>
     <tbody>
       <tr>
-        <td>1</td>
-        <td>711218104014</td>
-        <td>jack</td>
+        <td><?php echo $row['id']?></td>
+        <td><?php echo $row['registerno'] ?></td>
+        <td><?php echo $row['studentname'] ?></td>
         <td><label class="containere"><input type="radio"name="1" checked="checked"><span class="checkmark"></span></label></td>
         <td><label class="content"><input type="radio"name="1" ><span class="checkmark" ></span></label></td>
         <td></td>
         <td></td>
       </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+      
     </tbody>
   </table>
 </div>
