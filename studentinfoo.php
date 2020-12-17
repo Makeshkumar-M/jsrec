@@ -25,6 +25,11 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <style type="text/css">
+   .container  {
+    max-width: 100%;
+     }
+  </style>
 
   <!-- =======================================================
   * Template Name: Moderna - v2.1.0
@@ -50,11 +55,11 @@
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
           <li ><a href="index.html">Home</a></li>
-          <li><a href="services.html">Attendence</a></li>
+          <li><a href="attendencehome.html">Attendence</a></li>
           <li><a href="facultyinformation.html">Faculty details</a></li>
 
           <li class="active"><a href="studentinfoo.php">Student details</a></li>
-          <li><a href="team.html">Timetable</a></li>
+          <li><a href="timetablehome.html">Timetable</a></li>
           <li><a href="blog.html">Result</a></li>
 
 
@@ -77,38 +82,12 @@
   <main id="main">
 
     <!-- ======= Our Portfolio Section ======= -->
-    <section class="breadcrumbs">
+    <section class="breadcrumbs" style="    padding: 5px 0;">
       <div class="container">
-
         <div class="d-flex justify-content-between align-items-center">
-          <h2><input type="button" name="type" id="bt1" onclick="setVisibility('view');"  value='UPLOAD' style="
-      background-color: #1ebcea; /* Green */
-      border: none;
-      color: white;
-      border-radius:6px; 
-      padding: 10px;
-      width: 100px;
-      height: 40px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-"><input type="button" name="type" id="bt2" onclick="setVisibility2('upload');"  value='VIEW' style=" background-color:#1ebcea; /* Green */
-  border: none;
-    border-radius:6px; 
-
-  color: white;
-  padding: 10px;
-  width: 100px;
-  height:40px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;"></button></h2>
+  <h2><input type="button" class="collapsible" name="" id="bt1" class="btn btn-default" data-toggle="collapse" data-target="#demo" value='UPLOAD' style="background-color: #1ebcea; /* Green */border: none;color: white;border-radius:6px; padding: 10px;width: 100px;height: 40px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;    position: relative;
+    
+"><input type="button" name="" class="collapsible1" id="bt2" class="btn btn-default" data-toggle="collapse" data-target="#demo"value='VIEW' style=" background-color:#1ebcea; /* Green */border: none;border-radius:6px; color: white;padding:10px;width: 100px;height:40px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px; margin: 4px 2px; cursor: pointer;"></button></h2>
 
           <ol>
             <li><a href="index.html">Home</a></li>
@@ -120,13 +99,33 @@
     </section><!-- End Our Portfolio Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section class="portfolio">
+     <section class="portfolio" style="    padding: 100px 0;">
+
       <div class="container" style="padding-right:;
     padding-left:;
     margin-right: auto;
-    margin-left:2px;">
-        <embed type="text/html" src="studentinfo.php"  style="width:1200px; height:1413px;">
-        
+    margin-left:2px;" id="demo">
+    <div  class="content" >
+        <embed type="text/html" src="studentdetails.php"  style="width:100%; height:3000px; position: relative;
+    right: 0px;">
+    </div>
+  
+      </div>
+      <div class="container" id="demo1">
+        <div  class="content" style="width: 100%;    position: relative;
+    left: 6px;">
+        <embed type="text/html"  src="studentinfo.php" style="width:100%; height:1413px;">
+    </div>
+    <script type="text/javascript">
+        $('#btn1').click(function(){
+        $('.collapse').hide();
+        $('#demo').show();
+      });
+        $('#btn2').click(function(){
+          $('.collapse').hide();
+          $('#demo1').show();
+        });
+</script>
 
       </div>
     </section><!-- End Portfolio Section -->
@@ -136,30 +135,6 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
-    <div class="footer-newsletter">
-      <div class="container">
-        
-
-
-
-
-
-
-      </div>
-    </div>
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          
-
-
-
-
-        </div>
-      </div>
-    </div>
 
     <div class="container">
       <div class="copyright">
@@ -191,6 +166,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
 
 </body>
 

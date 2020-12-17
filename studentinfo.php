@@ -5,7 +5,7 @@
 <head>
 	 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>faculty</title>
+    <title>Faculty</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="shared/style.css">
@@ -80,12 +80,16 @@ input[type=text], input[type=password], select {
                   <div class="card-body"  style="width: 100%;  height: 1165px;">
                     <h4 class="card-title"> STUDENT INFO</h4>
                     <p class="card-description">uploade STUDENT details</p>
-                        <form class="forms-sample" style="height: 100%" method="post" action="studentdetails.php">
+                        <form class="forms-sample" style="height: 100%" method="post" action="" enctype="multipart/form-data">
                     <div class="row" style="padding-left:20px; width: 47%; ">
                     <div class="col-50" style="width: 50%;">
                       <div class="form-group">
                         <label for="exampleInputName1">Name:</label><br>
                         <input type="text" class="form-control"id="exampleInputName1" placeholder="Enter Your Name.." name="studentname">
+                      </div>
+                      <div class="form-group">
+                        <label for="profile" >Profile PictureL</label>
+                        <input type="file" name="profile" id="profile" class="form-control" >
                       </div>
                       
                       <div class="form-group">
@@ -96,10 +100,7 @@ input[type=text], input[type=password], select {
                         <label for="exampleInputName1">Register Number:</label><br>
                         <input type="number" class="form-control"id="exampleInputName1" placeholder="Enter Your Register No.." name="registerno">
                       </div>
-                      <div class="form-group">
-                        <label for="profile" >Profile PictureL</label>
-                        <input type="file" name="profile" class="form-control" >
-                      </div>
+                      
                       <div class="form-group">
                         <label for="exampleInputName1">Degree:</label><br>
                         <select id="degree" name="degree" class="form-control" style="width: 50%;">
@@ -180,7 +181,7 @@ input[type=text], input[type=password], select {
                     </div>
                     <div class="form-group">
                         <label for ="Mobile No">Aadhar Number:</label><br>
-                        <input type="text" id="aadharno" name="aadharno" class="form-control" maxlength="12" placeholder="Enter Your Aadhar No.." required>
+                        <input type="text" id="aadharno" name="aadharno" class="form-control"  placeholder="Enter Your Aadhar No.." required>
                     </div>
                     <div class="form-group">
                         <label for ="community"> Community:</label><br>
@@ -275,3 +276,52 @@ input[type=text], input[type=password], select {
 </div>
 </body>
 </html>
+<?php
+$servername = "localhost";
+$username = "jsrecdb";
+$password = "";
+$dbname = "jsrecdb";
+
+$conn =mysqli_connect($servername,$username,$password,$dbname);
+
+if(!$conn){
+  die("connection failed: " . mysql_connect_error());
+}
+if (isset($_POST['submit'])) 
+{
+$studentname = $_POST['studentname'];
+$file = addslashes(file_get_contents($_FILES["profile"]["tmp_name"]));  
+$rollno = $_POST['rollno'];
+$registerno = $_POST['registerno'];
+$degree = $_POST['degree'];
+$department = $_POST['department'];
+$email = $_POST['email'];
+$enrolledon = $_POST['enrolledon'];
+$dob = $_POST['dob'];
+$bloodgroup = $_POST['bloodgroup'];
+$mobileno = $_POST['mobileno'];
+$address = $_POST['address'];
+$city = $_POST['city'];
+$aadharno = $_POST['aadharno'];
+$community = $_POST['community'];
+$quota = $_POST['quota'];
+$daysshostler = $_POST['daysshostler'];
+$busno = $_POST['busno'];
+$firstgraduate = $_POST['firstgraduate'];
+$medium = $_POST['medium'];
+$fathername = $_POST['fathername'];
+$mothername = $_POST['mothername'];
+$pmobileno = $_POST['pmobileno'];
+$schoolname = $_POST['schoolname'];
+$cuttoff = $_POST['cuttoff'];
+
+$sql = "INSERT INTO  studentinfo( studentname, profile, rollno, registerno, degree, department, email, enrolledon, dob, bloodgroup, mobileno, address, city, aadharno, community, quota, dayhostler, busno, firstgraduate, medium, fathername, mothername, pmobileno, schoolname, cuttoff)VALUES('$studentname','$file','$rollno','$registerno','$degree','$department','$email','$enrolledon','$dob','$bloodgroup','$mobileno','$address','$city','$aadharno','$community','$quota','$daysshostler','$busno','$firstgraduate','$medium','$fathername','$mothername','$pmobileno','$schoolname','$cuttoff')";
+
+if (mysqli_query($conn,$sql)){
+  echo "<script>alert('student details uploaded successfully')</script>";
+}else{
+  echo "Error:" . mysqli_error($conn);
+}
+}
+mysqli_close($conn);
+?>

@@ -1,13 +1,4 @@
-/**
-* Template Name: Moderna - v2.1.0
-* Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444;
@@ -125,7 +116,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   position: relative;
   white-space: nowrap;
   float: left;
-  left: 101px;
+  left: -25px;
   right: 5px;
 }
 
@@ -2191,7 +2182,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #0b212d;
+  background: #1d6287;
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
@@ -2199,7 +2190,7 @@ section {
 
 #footer .footer-newsletter {
   padding: 50px 0;
-  background: #2196f3;
+  background: #005e92;
 }
 
 #footer .footer-newsletter h4 {
